@@ -12,7 +12,7 @@
 <?import javafx.scene.control.Menu?>
 <!--<VBox fx:controller="com.example.lesson4fx.HelloController" xmlns:fx="http://javafx.com/fxml" spacing="10">-->
 <VBox  spacing="10.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.lesson6fx.HelloController">
+      fx:controller="com.example.lesson6fx.AppController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>

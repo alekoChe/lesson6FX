@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-public class HelloController {
+public class AppController {
     @FXML // если не повесить эту аннотацию над private, то поле не будет видно в других классах
     private TextArea messageArea;
     @FXML
