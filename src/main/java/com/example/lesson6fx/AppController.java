@@ -13,20 +13,34 @@ public class AppController {
     private TextField messageField;
     @FXML
     private Label welcomeText;
+    private SomeClient client;
+
+    public AppController() {
+        client = new SomeClient(this);
+    }
 
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
+//    public void clickSendButton(ActionEvent actionEvent) {
+//        final String message = messageField.getText();
+//        if (message.isEmpty()) {
+//            return;
+//        }
+//        messageArea.appendText(message + "\n");
+//        messageField.setText("");
+//        messageField.requestFocus(); // возвращает фокус на поле
+//    }
     public void clickSendButton(ActionEvent actionEvent) {
-        final String message = messageField.getText();
+        final String message = messageField.getText().trim();
         if (message.isEmpty()) {
             return;
         }
-        messageArea.appendText(message + "\n");
-        messageField.setText("");
-        messageField.requestFocus(); // возвращает фокус на поле
+        client.sendMessage(message);
+        messageField.clear();
+        messageField.requestFocus();
     }
 
     public void deleteText(ActionEvent actionEvent) {
@@ -35,5 +49,9 @@ public class AppController {
 
     public void exit(ActionEvent actionEvent) {
         System.exit(0);
+    }
+
+    public void addMessage(String message) {
+        messageArea.appendText(message +"\n");
     }
 }

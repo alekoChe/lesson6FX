@@ -19,7 +19,9 @@ public class SomeServer {
             final DataOutputStream out = new DataOutputStream(socket.getOutputStream());
             while (true) {
                 final String message = in.readUTF();
+                System.out.println("Сообщение от клиента: " + message);
                 if (message.startsWith("/end")) {
+                    out.writeUTF("/end");
                     break;
                 }
                 out.writeUTF("Эхо: " + message);
